@@ -69,12 +69,12 @@ export default defineNuxtConfig({
       ],
     },
   },
-  nitro: {
-    preset: "node-server",
-    experimental: {
-      wasm: false,
-    },
-  },
+  // nitro: {
+  //   preset: "node-server",
+  //   experimental: {
+  //     wasm: false,
+  //   },
+  // },
   experimental: {
     payloadExtraction: false,
   },
