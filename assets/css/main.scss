@@ -1,0 +1,111 @@
+// Global styles
+:root {
+  --primary: #0E1F33;
+  --secondary: #13AECE;
+  --accent: #F45D48;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+// Transitions
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+// Code elements
+code {
+  font-family: 'Fira Code', monospace;
+  border-radius: 4px;
+}
+
+// Link underline animation
+.animated-link {
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--secondary);
+    transition: width 0.3s ease;
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.custom-gradient {
+  background: linear-gradient(120deg, #0E1F33, #13AECE);
+  background-size: 200% 200%;
+  animation: gradient 8s linear infinite;
+}
+
+.custom-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark .custom-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+// Sponsor logos in dark mode
+.dark img[class*="grayscale"] {
+  filter: grayscale(0.5) brightness(1.5);
+  opacity: 0.9;
+  
+  &:hover {
+    filter: grayscale(0) brightness(1.5);
+    opacity: 1;
+  }
+}
+
+// Container with consistent spacing
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  
+  @media (min-width: 640px) {
+    max-width: 640px;
+  }
+  
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
+  
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+}
